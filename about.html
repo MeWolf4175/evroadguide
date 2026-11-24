@@ -1,1 +1,218 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | EV Road Guide</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #0b1118;
+            color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #101923;
+            padding: 18px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .blue, h2 {
+            color: #009dff;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+
+        nav a:hover {
+            color: #009dff;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #102b40, #0b1118);
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        .page-header h1 {
+            font-size: 42px;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            margin-bottom: 35px;
+        }
+
+        .content-box {
+            background: #142431;
+            border: 1px solid #243746;
+            border-radius: 10px;
+            padding: 25px;
+        }
+
+        .menu-button {
+            display: none;
+            background: #009dff;
+            border: 0;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            background: #101923;
+            color: #b8c3cc;
+            padding: 25px;
+        }
+
+        @media (max-width: 700px) {
+            .menu-button {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                width: 100%;
+            }
+
+            nav.open {
+                display: block;
+            }
+
+            nav a {
+                display: block;
+                padding: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <span class="blue">EV</span> Road Guide
+        </div>
+
+        <button class="menu-button"
+                type="button"
+                aria-label="Toggle navigation menu"
+                aria-expanded="false"
+                aria-controls="site-menu"
+                onclick="toggleMenu(this)">
+            Menu
+        </button>
+
+        <nav id="site-menu" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <h1>About EV Road Guide</h1>
+        <p>Exploring the World of Electric Vehicles</p>
+    </div>
+
+    <main>
+
+        <section>
+            <h2>Our Purpose</h2>
+
+            <div class="content-box">
+                <p>
+                    EV Road Guide is an educational website
+                    designed to provide information about
+                    electric vehicles and their growing role
+                    in transportation.
+                </p>
+
+                <p>
+                    The goal of this website is to help
+                    visitors understand how electric cars
+                    work, their advantages and disadvantages,
+                    and the options available to people
+                    interested in electric vehicle ownership.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>What You Can Learn</h2>
+
+            <div class="content-box">
+                <ul>
+                    <li>The history and development of electric cars.</li>
+                    <li>The benefits and limitations of electric vehicles.</li>
+                    <li>How electric vehicle charging works.</li>
+                    <li>Where to purchase electric vehicles.</li>
+                    <li>How to find public charging stations.</li>
+                    <li>What to consider when installing a home charger.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>About This Project</h2>
+
+            <div class="content-box">
+                <p>
+                    EV Road Guide was developed as an
+                    educational web development project.
+                </p>
+
+                <p>
+                    The website uses HTML, CSS, and basic
+                    JavaScript to create an informative,
+                    accessible, and easy-to-navigate
+                    experience.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>EV Road Guide</p>
+        <p>Exploring the Future of Electric Transportation</p>
+        <p>&copy; 2026 EV Road Guide</p>
+    </footer>
+
+    <script>
+        function toggleMenu(button) {
+            const menu = document.getElementById("site-menu");
+            const isOpen = menu.classList.toggle("open");
+            button.setAttribute("aria-expanded", isOpen);
+        }
+    </script>
+
+</body>
+</html>
+
