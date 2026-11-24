@@ -1,49 +1,343 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EV Road Guide | Coming Soon</title>
+
+    <title>EV Road Guide | Home</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            background-color: #0b1118;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
             margin: 0;
-            min-height: 100vh;
+            background: #0b1118;
+            color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #101923;
+            padding: 18px 6%;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .blue {
+            color: #009dff;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px 0 0;
+        }
+
+        nav a:hover {
+            color: #009dff;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(
+                135deg,
+                #102b40,
+                #0b1118
+            );
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 52px);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #b8c3cc;
+        }
+
+        .button {
+            display: inline-block;
+            background: #009dff;
+            color: #07121c;
+            padding: 12px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         main {
-            padding: 20px;
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
         }
 
-        h1 {
-            font-size: 50px;
+        section {
+            margin-bottom: 55px;
         }
 
         h2 {
             color: #009dff;
-            font-size: 35px;
         }
 
-        p {
+        .content-box {
+            background: #142431;
+            border: 1px solid #243746;
+            border-radius: 10px;
+            padding: 25px;
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        a {
+            color: #43b4ff;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(220px, 1fr)
+            );
+            gap: 20px;
+        }
+
+        .card {
+            background: #142431;
+            border: 1px solid #243746;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .card h3 {
+            color: #009dff;
+        }
+
+        .menu-button {
+            display: none;
+            background: #009dff;
+            border: 0;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            background: #101923;
             color: #b8c3cc;
-            font-size: 18px;
-            line-height: 1.6;
+            padding: 25px;
+        }
+
+        @media (max-width: 700px) {
+            .menu-button {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                width: 100%;
+            }
+
+            nav.open {
+                display: block;
+            }
+
+            nav a {
+                display: block;
+                padding: 10px 0;
+            }
         }
     </style>
 </head>
 
 <body>
+
+    <header>
+        <div class="logo">
+            <span class="blue">EV</span> Road Guide
+        </div>
+
+        <button class="menu-button"
+                type="button"
+                aria-label="Toggle navigation menu"
+                aria-expanded="false"
+                aria-controls="site-menu"
+                onclick="toggleMenu(this)">
+            Menu
+        </button>
+
+        <nav id="site-menu" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="#about">About</a>
+            <a href="#benefits">Benefits</a>
+            <a href="#manufacturers">Manufacturers</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>
+            Discover the Future of
+            <span class="blue">Electric Driving</span>
+        </h1>
+
+        <p>
+            Explore electric vehicles, their technology,
+            benefits, and the future of transportation.
+        </p>
+
+        <a href="#about" class="button">
+            Explore Electric Cars
+        </a>
+    </div>
+
     <main>
-        <h1>EV Road Guide</h1>
-        <h2>Coming Soon</h2>
+
+        <section id="about">
+            <h2>Welcome to EV Road Guide</h2>
+
+            <div class="content-box">
+                <p>
+                    Electric cars are becoming increasingly
+                    popular as alternatives to traditional
+                    gasoline-powered vehicles.
+                </p>
+
+                <p>
+                    This website explores how electric cars
+                    work, their advantages and disadvantages,
+                    charging options, and the different
+                    manufacturers available today.
+                </p>
+            </div>
+        </section>
+
+        <section id="benefits">
+            <h2>Benefits of Electric Cars</h2>
+
+            <div class="content-box">
+                <ul>
+                    <li>
+                        Electric cars do not require gasoline.
+                    </li>
+                    <li>
+                        They produce no tailpipe emissions.
+                    </li>
+                    <li>
+                        Many electric vehicles can be charged
+                        at home.
+                    </li>
+                    <li>
+                        Public charging stations are available
+                        in many cities.
+                    </li>
+                    <li>
+                        Electric vehicles can have lower
+                        maintenance and operating costs.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>What You'll Discover</h2>
+
+            <div class="card-grid">
+
+                <div class="card">
+                    <h3>History of Electric Cars</h3>
+                    <p>
+                        Discover the history of electric
+                        vehicles and how they have evolved.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Charging Your EV</h3>
+                    <p>
+                        Learn about public charging stations
+                        and charging an electric car at home.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Buying an Electric Car</h3>
+                    <p>
+                        Explore electric vehicle manufacturers
+                        and learn where to purchase an EV.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Frequently Asked Questions</h3>
+                    <p>
+                        Find answers to common questions
+                        about electric vehicle ownership.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="manufacturers">
+            <h2>Electric Car Manufacturers</h2>
+
+            <div class="content-box">
+                <p>
+                    Explore these major vehicle manufacturers
+                    that offer electric vehicles.
+                </p>
+
+                <ol>
+                    <li><a href="https://www.tesla.com">Tesla</a></li>
+                    <li><a href="https://www.chevrolet.com/electric">Chevrolet</a></li>
+                    <li><a href="https://www.ford.com/electric/">Ford</a></li>
+                    <li><a href="https://www.hyundaiusa.com">Hyundai</a></li>
+                    <li><a href="https://www.kia.com/us/en">Kia</a></li>
+                    <li><a href="https://rivian.com">Rivian</a></li>
+                    <li><a href="https://www.bmwusa.com">BMW</a></li>
+                    <li><a href="https://www.vw.com">Volkswagen</a></li>
+                </ol>
+            </div>
+        </section>
+
     </main>
+
+    <footer>
+        <p>EV Road Guide</p>
+        <p>Exploring the Future of Electric Transportation</p>
+        <p>&copy; 2026 EV Road Guide</p>
+    </footer>
+
+    <script>
+        function toggleMenu(button) {
+            const menu = document.getElementById("site-menu");
+            const isOpen = menu.classList.toggle("open");
+
+            button.setAttribute("aria-expanded", isOpen);
+        }
+    </script>
+
 </body>
 </html>
